@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Makeup Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+       body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+header {
+    background-color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    padding: 5px 10px;
+}
+
+nav ul li a:hover {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+.products-header {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.products-header h2 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.products-header p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.products-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.product-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+    height: 400px; /* Fixed height for all cards */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+}
+
+.product-image img {
+    width: 100%;
+    height: 200px; /* Fixed height for images */
+    object-fit: cover; /* Ensures the image covers the area */
+}
+
+.product-details {
+    padding: 10px;
+    flex-grow: 1;
+}
+
+.product-details h3 {
+    margin: 10px 0;
+    font-size: 1.5em;
+}
+
+.product-price {
+    color: #b12704;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.product-description {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.add-to-cart {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #218838;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.social-icons {
+    margin: 10px 0;
+}
+
+.social-icons a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.social-icons a:hover {
+    color: #ddd;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images (11).jpg" alt="Logo" class="logo-image">
+            <h1>Makeup Store</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html" id="cart-icon"><i class="fas fa-shopping-cart"></i><span id="cart-count">0</span></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="products-header">
+            <h2>Our Products</h2>
+            <p>Explore our collection of premium makeup products, each crafted to enhance your natural beauty.</p>
+        </section>
+        <section class="products-list">
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="images (1).jpg" alt="Lipstick">
+                </div>
+                <div class="product-details">
+                    <h3>Lipstick</h3>
+                    <p class="product-price">$15</p>
+                    <p class="product-description">Enhance your lips with our richly pigmented lipstick. Provides smooth application and long-lasting color.</p>
+                    <button class="add-to-cart" data-name="Lipstick" data-price="15">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="images (9).jpg" alt="Foundation">
+                </div>
+                <div class="product-details">
+                    <h3>Foundation</h3>
+                    <p class="product-price">$30</p>
+                    <p class="product-description">Achieve a flawless complexion with our foundation. Offers full coverage and a natural finish.</p>
+                    <button class="add-to-cart" data-name="Foundation" data-price="30">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="images (8).jpg" alt="Eyeshadow">
+                </div>
+                <div class="product-details">
+                    <h3>Eyeshadow</h3>
+                    <p class="product-price">$20</p>
+                    <p class="product-description">Create stunning eye looks with our eyeshadow. Available in a range of vibrant and neutral shades.</p>
+                    <button class="add-to-cart" data-name="Eyeshadow" data-price="20">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="تنزيل.jpg" alt="Blush">
+                </div>
+                <div class="product-details">
+                    <h3>Blush</h3>
+                    <p class="product-price">$25</p>
+                    <p class="product-description">Add a natural flush to your cheeks with our blush. Available in matte and shimmer finishes.</p>
+                    <button class="add-to-cart" data-name="Blush" data-price="25">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="images (6).jpg" alt="Mascara">
+                </div>
+                <div class="product-details">
+                    <h3>Mascara</h3>
+                    <p class="product-price">$18</p>
+                    <p class="product-description">Get voluminous lashes with our mascara. Formulated to add length and definition without clumping.</p>
+                    <button class="add-to-cart" data-name="Mascara" data-price="18">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="تنزيل (5).jpg" alt="Highlighter">
+                </div>
+                <div class="product-details">
+                    <h3>Highlighter</h3>
+                    <p class="product-price">$22</p>
+                    <p class="product-description">Illuminate your features with our highlighter. Perfect for achieving a radiant and dewy glow.</p>
+                    <button class="add-to-cart" data-name="Highlighter" data-price="22">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="تنزيل (6).jpg" alt="Concealer">
+                </div>
+                <div class="product-details">
+                    <h3>Concealer</h3>
+                    <p class="product-price">$17</p>
+                    <p class="product-description">Cover imperfections with our concealer. Provides full coverage and blends seamlessly into the skin.</p>
+                    <button class="add-to-cart" data-name="Concealer" data-price="17">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="تنزيل (7).jpg" alt="Bronzer">
+                </div>
+                <div class="product-details">
+                    <h3>Bronzer</h3>
+                    <p class="product-price">$21</p>
+                    <p class="product-description">Achieve a sun-kissed glow with our bronzer. Available in multiple shades to suit every skin tone.</p>
+                    <button class="add-to-cart" data-name="Bronzer" data-price="21">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="518vgnXslPL.jpg" alt="Makeup Remover">
+                </div>
+                <div class="product-details">
+                    <h3>Makeup Remover</h3>
+                    <p class="product-price">$23</p>
+                    <p class="product-description">Gently remove makeup with our effective makeup remover. Suitable for all skin types.</p>
+                    <button class="add-to-cart" data-name="Makeup Remover" data-price="23">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="تنزيل (1).jpg" alt="Lip Gloss">
+                </div>
+                <div class="product-details">
+                    <h3>Lip Gloss</h3>
+                    <p class="product-price">$21</p>
+                    <p class="product-description">Achieve glossy, plump lips with our lip gloss. Available in a variety of shades to complement any look.</p>
+                    <button class="add-to-cart" data-name="Lip Gloss" data-price="21">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="images (12).jpg" alt="Nail Polish">
+                </div>
+                <div class="product-details">
+                    <h3>Nail Polish</h3>
+                    <p class="product-price">$25</p>
+                    <p class="product-description">Add a pop of color to your nails with our high-quality nail polish. Long-lasting and available in various shades.</p>
+                    <button class="add-to-cart" data-name="Nail Polish" data-price="25">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="oy3E5.27.jpg" alt="Lipstick">
+                </div>
+                <div class="product-details">
+                    <h3>Lipstick</h3>
+                    <p class="product-price">$28</p>
+                    <p class="product-description">Experience luxurious color with our lipstick. Smooth texture and rich pigmentation for a bold look.</p>
+                    <button class="add-to-cart" data-name="Lipstick" data-price="28">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="images.png" alt="EyeLiner">
+                </div>
+                <div class="product-details">
+                    <h3>EyeLiner</h3>
+                    <p class="product-price">$24</p>
+                    <p class="product-description">Define your eyes with our precision eyeliner. Long-lasting and perfect for creating sharp lines.</p>
+                    <button class="add-to-cart" data-name="EyeLiner" data-price="24">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="images (13).jpg" alt="Makeup Brush Set">
+                </div>
+                <div class="product-details">
+                    <h3>Makeup Brush Set</h3>
+                    <p class="product-price">$24</p>
+                    <p class="product-description">Our makeup brush set includes everything you need for a flawless application. Soft bristles and durable handles.</p>
+                    <button class="add-to-cart" data-name="Makeup Beush Set" data-price="24">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="images (16).jpg" alt="Beauty Blender">
+                </div>
+                <div class="product-details">
+                    <h3>Beauty Blender</h3>
+                    <p class="product-price">$28</p>
+                    <p class="product-description">Blend your makeup seamlessly with our beauty blender. Perfect for achieving a flawless finish.</p>
+                    <button class="add-to-cart" data-name="Beauty Blender" data-price="28">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="images (18).jpg" alt="Lipstick">
+                </div>
+                <div class="product-details">
+                    <h3>Lipstick</h3>
+                    <p class="product-price">$30</p>
+                    <p class="product-description">Get the perfect pout with our luxurious lipstick. Offers rich color and a comfortable wear.</p>
+                    <button class="add-to-cart" data-name="Lipstick" data-price="30">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="s-l500.jpg" alt="Bare Essentials Eyelash Curler">
+                </div>
+                <div class="product-details">
+                    <h3>Bare Essentials Eyelash Curler</h3>
+                    <p class="product-price">$19</p>
+                    <p class="product-description">Curl your lashes effortlessly with our eyelash curler. Designed for comfortable and effective use.</p>
+                    <button class="add-to-cart" data-name="Bare Essentials Eyelash Curler" data-price="19">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="تنزيل (8).jpg" alt="Eyeshadow">
+                </div>
+                <div class="product-details">
+                    <h3>Eyeshadow</h3>
+                    <p class="product-price">$30</p>
+                    <p class="product-description">Create beautiful eye looks with our eyeshadow. Available in various finishes and shades for versatile looks.</p>
+                    <button class="add-to-cart" data-name="Eyeshadow" data-price="30">Add to Cart</button>
+
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>&copy; 2024 Makeup Store. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
